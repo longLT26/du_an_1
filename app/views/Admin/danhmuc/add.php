@@ -38,10 +38,11 @@
                             <!-- /.card-body -->
                             <?php
 if (isset($thongbao) && $thongbao != "") {
-    echo '<div class="container mt-3"><div class="alert alert-success" role="alert">' . $thongbao . '</div></div>';
+    echo '<div class="container-fluid"><div class="alert alert-success" role="alert">' . $thongbao . '</div></div>';
 }
 ?>
                             <div class="card-footer">
+                                
                                 <button type="submit" name="themmoi" class="btn btn-primary">Thêm</button>
                             </div>
 

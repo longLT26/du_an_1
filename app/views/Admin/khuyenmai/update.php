@@ -1,8 +1,3 @@
-<?php
-if (is_array($km)) {
-  extract($km);
-}
-?>
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <div class="content-header">
@@ -29,46 +24,40 @@ if (is_array($km)) {
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="index.php?act=updatekm" method="POST">
+            <form>
               <div class="card-body">
-                <input type="hidden" name="id" value="<?php echo $km['id_khuyen_mai'] ?>">
                 <div class="form-group">
                   <label for="exampleInput">Mã khuyến mại</label>
-                  <input class="form-control" type="text" name="makhuyenmai" value="<?php echo $km['ma_khuyen_mai'] ?>" placeholder="Nhập khuyến mại">
+                  <input class="form-control" type="text" placeholder="Nhập mã khuyến mại">
                 </div>
                 <div class="form-group">
                   <label for="exampleInput">Giá trị khuyến mại</label>
-                  <input class="form-control" type="text" name="phantramkhuyenmai" value="<?php echo $km['phan_tram_khuyen_mai'] ?>" placeholder="Nhập giá trị khuyến mại">
+                  <input class="form-control" type="text" placeholder="Nhập giá trị khuyến mại">
                 </div>
                 <div class="form-group">
                   <label for="exampleInput">Ngày bắt đầu</label>
-                  <input class="form-control" type="date" name="ngaybatdau" value="<?php echo $km['ngay_bat_dau'] ?>" placeholder="Nhập ngày bắt đầu">
+                  <input class="form-control" type="date" placeholder="Nhập ngày bắt đầu">
                 </div>
                 <div class="form-group">
                   <label for="exampleInput">Ngày kết thúc</label>
-                  <input class="form-control" type="date" name="ngayketthuc" value="<?php echo $km['ngay_ket_thuc'] ?>" placeholder="Nhập ngày kết thúc">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInput">Mô tả</label>
-                  <input class="form-control" type="text" name="mota" value="<?php echo $km['mo_ta'] ?>" placeholder="Nhập mô tả">
+                  <input class="form-control" type="date" placeholder="Nhập ngày kết thúc">
                 </div>
                 <div class="form-group">
                   <label>Trạng thái</label>
-                  <select name="trangthai" class="select2" style="width: 100%;">
-                    <option value="ON">On</option>
-                    <option value="OFF">Off</option>
+                  <select class="select2" style="width: 100%;">
+                    <option selected>On</option>
+                    <option>Off</option>
                   </select>
                 </div>
-
+                <div class="form-group">
+                  <label>Mô tả</label>
+                  <textarea class="form-control" rows="3" placeholder="Nhập mô tả ..."></textarea>
+                </div>
               </div>
               <!-- /.card-body -->
-              <?php
-              if (isset($thongbao) && $thongbao != "") {
-                echo '<div class="container mt-3"><div class="alert alert-success" role="alert">' . $thongbao . '</div></div>';
-              }
-              ?>
+
               <div class="card-footer">
-                <button type="submit" name='capnhat' class="btn btn-primary">Sửa</button>
+                <button type="submit" class="btn btn-primary">Sửa</button>
               </div>
             </form>
           </div>

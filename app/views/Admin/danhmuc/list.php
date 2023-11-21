@@ -34,13 +34,14 @@
                 <tbody>
                 <?php foreach ($listdanhmuc as $danhmuc): ?>
                   <tr>
-                    <td> <?php echo $danhmuc['id_danh_muc']; ?></td>
-                    <td> <?php echo $danhmuc['ten_danh_muc']; ?></td>
+                    <td>   <?php echo $danhmuc['id_danh_muc']; ?></td>
+                    <td> <?php echo $danhmuc['ten_danh_muc']; ?>
+                    </td>
                     <td> <?php echo $danhmuc['mo_ta']; ?></td>
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-outline-secondary" href="index.php?act=updatedm&id_danh_muc=<?php echo $danhmuc['id_danh_muc']; ?>" role="button">Sửa</a>
-                        <a class="btn btn-outline-danger" href="index.php?act=xoadm&id_danh_muc=<?php echo $danhmuc['id_danh_muc']; ?>" role="button">Xóa</a>
+                        <a class="btn btn-outline-secondary" href="index.php?act=suadm&id=<?php echo $danhmuc['id_danh_muc']; ?>" role="button">Sửa</a>
+                        <a class="btn btn-outline-danger" href="index.php?act=xoadm&id=<?php echo $danhmuc['id_danh_muc']; ?>" role="button">Xóa</a>
 
                       </div>
                     </td>

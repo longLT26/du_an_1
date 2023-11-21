@@ -30,31 +30,29 @@
                     <th>Giá trị khuyến mại</th>
                     <th>Ngày bắt đầu</th>
                     <th>Ngày kết thúc</th>
-                    <th>Mô tả</th>
                     <th>Trạng thái</th>
+                    <th>Mô tả</th>
                     <th>Chọn</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($listkhuyenmai as $khuyenmai): ?>
-                    
                   <tr>
-                    <td> <?php echo $khuyenmai['id_khuyen_mai'];?></td>
-                    <td> <?php echo $khuyenmai['ma_khuyen_mai'];?></td>
-                    <td><?php echo $khuyenmai['phan_tram_khuyen_mai'];?> </td>
-                    <td> <?php echo $khuyenmai['ngay_bat_dau']; ?></td>
-                    <td><?php echo $khuyenmai['ngay_ket_thuc']; ?></td>
-                    <td><?php echo $khuyenmai['mo_ta'];?></td>
-                    <td><?php echo  $khuyenmai['trang_thai'];?></td>
+                    <td>1</td>
+                    <td>TANGBAN
+                    </td>
+                    <td>10%</td>
+                    <td>13/11/2023</td>
+                    <td>30/11/2023</td>
+                    <td>On</td>
+                    <td>Khuyến mại ngày nhà giáo Việt Nam</td>
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-outline-secondary" href="index.php?act=suakm&id=<?php echo $khuyenmai['id_khuyen_mai']; ?>" role="button">Sửa</a>
-                        <a class="btn btn-outline-danger" href="index.php?act=xoakm&id=<?php echo $khuyenmai['id_khuyen_mai'];?> " role="button">Xóa</a>
+                        <a class="btn btn-outline-secondary" href="index.php?act=updatekm" role="button">Sửa</a>
+                        <a class="btn btn-outline-danger" href="#" role="button">Xóa</a>
 
                       </div>
                     </td>
                   </tr>
-                  <?php endforeach; ?>
 
                 </tbody>
               </table>

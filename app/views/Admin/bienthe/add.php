@@ -24,48 +24,48 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form action="index.php?act=addbt" method="POST" enctype="multipart/form-data">
               <div class="card-body">
               <div class="form-group">
-                                    <label for="exampleInputFile">Hình ảnh Sản Phẩm</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="exampleInputFile">
-                                            <label class="custom-file-label" for="exampleInputFile">Chọn ảnh</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">Tải lên</span>
-                                        </div>
+                                <label for="exampleInputFile">Hình ảnh Sản Phẩm</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                    <input type="file" name="hinhanh" class="custom-file-input" id="exampleInputFile">
+                                        <label class="custom-file-label" for="exampleInputFile">Chọn ảnh</label>
                                     </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Tải lên</span>
+                                    </div>
+                                </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInput">Màu</label>
-                                    <input class="form-control" type="text" placeholder="Nhập màu">
+                                    <input class="form-control" name="mau" type="text" placeholder="Nhập màu">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInput">Giá</label>
-                                    <input class="form-control" type="text" placeholder="Nhập Giá">
+                                    <input class="form-control" name="gia" type="text" placeholder="Nhập Giá">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInput">Giá Sale</label>
-                                    <input class="form-control" type="text" placeholder="Nhập giá Sale">
+                                    <input class="form-control" name="giasale" type="text" placeholder="Nhập giá Sale">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInput">Nhập dung lượng</label>
-                                    <input class="form-control" type="text" placeholder="Nhập dung lượng">
+                                    <input class="form-control" name="dungluong" type="text" placeholder="Nhập dung lượng">
                                 </div>
                                 <div class="form-group">
                                     <label>Sản phẩm</label>
-                                    <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
+                                    <select name="idsanpham" class="form-control">
+                                    <?php foreach ($listsanpham as $sanpham): ?>
+                                      <option value="<?php echo $sanpham['id_san_pham']?>"><?php echo $sanpham['ten_san_pham']?></option>
+                                      <?php endforeach; ?>
                                     </select>
                                 </div> 
               <!-- /.card-body -->
 
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Thêm</button>
+                <button type="submit" name="themmoi" class="btn btn-primary">Thêm</button>
               </div>
             </form>
           </div>

@@ -1,3 +1,8 @@
+<?php
+if (is_array($sp) ){
+    extract($sp);
+}
+?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -24,53 +29,35 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form>
+                        <form action="index.php?act=updatesp" method="POST">
+                        <input type="hidden" name="id" value="<?= isset($id) ? $id : '' ?>">
+                            <div class="form-group">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInput">Tên Sản Phẩm</label>
-                                    <input class="form-control" type="text" placeholder="Nhập tên sản phẩm">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInput">Giá</label>
-                                    <input class="form-control" type="text" placeholder="Nhập Giá">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInput">Giá Sale</label>
-                                    <input class="form-control" type="text" placeholder="Nhập số Giá Sale">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputFile">Hình ảnh Sản Phẩm</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="exampleInputFile">
-                                            <label class="custom-file-label" for="exampleInputFile">Chọn ảnh</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">Tải lên</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Dung Lượng</label>
-                                    <select class="form-control">
-                                        <option>128GB</option>
-                                        <option>256GB</option>
-                                        <option>512GB</option>
-                                    </select>
+                                    <input class="form-control" name="tensanpham" value="<?php echo $sp['ten_san_pham']?>" type="text" placeholder="Nhập tên sản phẩm">
                                 </div>
                                 <div class="form-group">
                                     <label>Ngày Nhập</label>
-                                    <input class="form-control" type="date" placeholder="Nhập ngày">
+                                    <input class="form-control" name="ngaynhap" value="<?php echo $sp['ngay_nhap']?>" type="date" placeholder="Nhập ngày">
                                 </div>
                                 <div class="form-group">
                                     <label>Mô tả</label>
-                                    <textarea class="form-control" rows="5" placeholder="Nhập mô tả ..."></textarea>
+                                    <input class="form-control" name="mota" value="<?php echo $sp['mo_ta_sp']?>" type="text" placeholder="Nhập mô tả">
+                                </div>
+                                <div class="form-group">
+                                    <label>Danh mục</label>
+                                    <select name="iddanhmuc" class="form-control">
+                                    <?php foreach ($listdanhmuc as $danhmuc): ?>
+                                        <option value="<?php echo $danhmuc['id_danh_muc']?>"><?php echo $danhmuc['ten_danh_muc']?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                             </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Sửa</button>
+                                <button type="submit" name="capnhat" class="btn btn-primary">Sửa</button>
                             </div>
                         </form>
                     </div>

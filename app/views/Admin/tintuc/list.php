@@ -34,29 +34,33 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($listtintuc as $tintuc): ?>
-                  
                   <tr>
-                    <td> <?php echo $tintuc['id_tin_tuc'];?></td>
-                    <td> <?php echo $tintuc['tieu_de']?> </td>
-                    <td><img src="../../upload/<?php echo $tintuc['img']; ?>" alt="" height="100px" ></td>
-                    <td><?php echo $tintuc['ngay_dang'];?></td>
-                    <td> <?php echo $tintuc['noi_dung'];?></td>
+                    <td>1</td>
+                    <td>Đánh giá sức mạnh của chip A17 Pro: Vượt xa A16 Bionic
+                    </td>
+                    <td><img src="/dist/img/AdminLTELogo.png" alt=""></td>
+                    <td>13/11/2023</td>
+                    <td>1. Chip A17 Pro là gì?
+
+                      Hiệu năng: Chip A17 Pro có hiệu năng CPU lên đến 10%, GPU trung bình tăng khoảng 20% và Neural Engine nhanh hơn so với chip A16 Bionic. Điều này là do chip A17 Pro được sản xuất trên quy trình 3nm tiên tiến hơn.
+                      Khả năng tiết kiệm pin: Nhờ được tối ưu hóa hiệu năng và hiệu suất tốt hơn, chip A17 Pro có khả năng tiết kiệm pin cải tiến nhiều so với chip A16.
+                      Khả năng xử lý hình ảnh: Chip A17 Bionic và chip A16 Bionic đều sở hữu 16 lõi, giúp người dùng có thể chụp ảnh và quay video chất lượng cao trong mọi điều kiện ánh sáng.
+                    </td>
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-outline-secondary" href="index.php?act=suatt&id=<?php echo $tintuc['id_tin_tuc']; ?>" role="button">Sửa</a>
-                        <a class="btn btn-outline-danger" href="index.php?act=xoatt&id=<?php echo $tintuc['id_tin_tuc']; ?>" role="button">Xóa</a>
+                        <a class="btn btn-outline-secondary" href="index.php?act=updatett" role="button">Sửa</a>
+                        <a class="btn btn-outline-danger" href="#" role="button">Xóa</a>
 
                       </div>
                     </td>
                   </tr>
-                 <?php endforeach;   ?>
 
                 </tbody>
               </table>
             </div>
             <!-- /.card-body -->
           </div>
+
         </div>
         <!-- /.col -->
       </div>

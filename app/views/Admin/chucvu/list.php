@@ -32,20 +32,21 @@
                   </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($listphanquyen as $phanquyen): ?>
                   <tr>
-                    <td>1</td>
-                    <td>Admin
+                    <td><?php echo $phanquyen['id_phan_quyen']?></td>
+                    <td><?php echo $phanquyen['ten_chuc_nang']?>
                     </td>
-                    <td>Quyền quản trị CRUD</td>
+                    <td><?php echo $phanquyen['mo_ta']?></td>
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-outline-secondary" href="index.php?act=updatecv" role="button">Sửa</a>
-                        <a class="btn btn-outline-danger" href="#" role="button">Xóa</a>
+                        <a class="btn btn-outline-secondary" href="index.php?act=suacv&id=<?php echo $phanquyen['id_phan_quyen']; ?>" role="button">Sửa</a>
+                        <a class="btn btn-outline-danger" href="index.php?act=xoacv&id=<?php echo $phanquyen['id_phan_quyen']; ?>" role="button">Xóa</a>
 
                       </div>
                     </td>
                   </tr>
-
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>

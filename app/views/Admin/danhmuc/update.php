@@ -1,5 +1,5 @@
 <?php
-if (isset($dm) && is_array($dm)) {
+if (is_array($dm)) {
     extract($dm);
 }
 
@@ -31,27 +31,23 @@ if (isset($dm) && is_array($dm)) {
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form action="index.php?act=updatedm" method="POST">
-                        <div class="card-body">  
-                        <input type="hidden" name="id" value="<?= isset($id) ? $id : '' ?>">
-</div>
+
                             <div class="card-body">
+                            <input type="hidden" name="id" value="<?= isset($id) ? $id : '' ?>">
+
                                 <div class="form-group">
                                     <label for="exampleInput">Tên loại</label>
-                                    <input class="form-control" type="text" name="tenloai" value="<?php isset($tenloai) ? $tenloai : ''; ?>" placeholder="Nhập tên danh mục">
+                                    <input class="form-control" type="text" id="tenloai" name="tenloai" value="<?php echo $dm['ten_danh_muc']?>" placeholder="Nhập tên danh mục" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Mô tả</label>
-                                    <textarea class="form-control" name="mota" rows="5" value="<?php isset($mota) ? $mota : ''; ?>" placeholder="Nhập mô tả ..."></textarea>
+                                    <input class="form-control" type="text" id="tenloai" name="mota" value="<?php echo $dm['mo_ta']?>" placeholder="Nhập mô tả" required>
                                 </div>
                             </div>
                             <!-- /.card-body -->
-                            <?php
-if (isset($thongbao) && $thongbao != "") {
-    echo '<div class="container mt-3"><div class="alert alert-success" role="alert">' . $thongbao . '</div></div>';
-}
-?>
+
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Sửa</button>
+                                <button type="submit" name="capnhat" class="btn btn-primary">Sửa</button>
                             </div>
                         </form>
                     </div>
