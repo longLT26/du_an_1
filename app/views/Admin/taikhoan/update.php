@@ -1,3 +1,9 @@
+<?php
+if (is_array($onetk)) {
+    extract($onetk);
+}
+
+?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -22,27 +28,26 @@
                             <div class="card-header">
                                 <h3 class="card-title">Sửa thông tin Tài Khoản</h3>
                             </div>
-                            <!-- /.card-header -->
-                            <!-- form start -->
-                            <form>
+                            <form action="index.php?act=updatetk" method="POST" enctype="multipart/form-data">
                                 <div class="card-body">
+                                <input type="hidden" name="id" value="<?= isset($id) ? $id : '' ?>">
                                     <div class="form-group">
                                         <label for="exampleInput">Tên đăng nhập</label>
-                                        <input class="form-control" type="text" placeholder="Nhập tên đăng nhập">
+                                        <input class="form-control" name='tendangnhap' value="<?php echo $onetk['ten_dang_nhap']?>" type="text" placeholder="Nhập tên đăng nhập">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Mật khẩu</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nhập mật khẩu">
+                                        <input type="password" name='matkhau' class="form-control"  value="<?php echo $onetk['mat_khau']?>" id="exampleInputPassword1" placeholder="Nhập mật khẩu">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInput">Họ tên</label>
-                                        <input class="form-control" type="text" placeholder="Nhập họ tên">
+                                        <input class="form-control" name='hoten'  value="<?php echo $onetk['ho_ten']?>" type="text" placeholder="Nhập họ tên">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputFile">Hình ảnh</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                <input type="file" name='hinhanh' class="custom-file-input" id="exampleInputFile">
                                                 <label class="custom-file-label" for="exampleInputFile">Chọn ảnh</label>
                                             </div>
                                             <div class="input-group-append">
@@ -52,36 +57,37 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nhập email">
+                                        <input type="email" name='email'  value="<?php echo $onetk['email']?>" class="form-control" id="exampleInputEmail1" placeholder="Nhập email">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInput">Số điện thoại</label>
-                                        <input class="form-control" type="text" placeholder="Nhập số điện thoại">
+                                        <input class="form-control" name='sdt'  value="<?php echo $onetk['sdt']?>" type="text" placeholder="Nhập số điện thoại">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInput">Địa chỉ</label>
-                                        <input class="form-control" type="text" placeholder="Nhập địa chỉ">
+                                        <input class="form-control" name='diachi'  value="<?php echo $onetk['dia_chi']?>" type="text" placeholder="Nhập địa chỉ">
                                     </div>
                                     <div class="form-group">
                                         <label>Chức vụ</label>
-                                        <select class="form-control">
-                                            <option>Admin</option>
-                                            <option>Nhân viên</option>
-                                            <option>Người dùng</option>
+                                        <select name='idphanquyen' class="form-control">
+                                        <?php foreach ($listphanquyen as $phanquyen): ?>
+                                            <tr>
+                                            <option value="<?php echo $phanquyen['id_phan_quyen']?>"><?php echo $phanquyen['ten_chuc_nang']?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Trạng Thái</label>
-                                        <select class="form-control">
-                                            <option>On</option>
-                                            <option>Off</option>
+                                        <select name="trangthai" class="form-control">
+                                            <option value="ON">On</option>
+                                            <option value="OFF">Off</option>
                                         </select>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" name="capnhat" class="btn btn-primary">Cập nhật</button>
                                 </div>
                             </form>
                         </div>

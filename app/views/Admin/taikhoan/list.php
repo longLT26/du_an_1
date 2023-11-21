@@ -20,7 +20,7 @@
             <div class="card-header">
               <h3 class="card-title">Danh sách Tài Khoản</h3>
             </div>
-            <form action="enhanced-results.html">
+            <form action="index.php?act=listtk" method="POST">
               <div class="row">
                 <div class="col-md-10 offset-md-1">
                   <div class="row">
@@ -31,10 +31,10 @@
                     <div class="col-9">
                       <div class="form-group">
                         <label>Chức vụ</label>
-                        <select class="select2" style="width: 100%;">
-                          <option selected>Admin</option>
-                          <option>Nhân viên</option>
-                          <option>Người dùng</option>
+                        <select name="idphanquyen" class="form-control">
+                          <?php foreach ($listphanquyen as $pq): ?>
+                              <option value="<?php echo $pq['id_phan_quyen']?>"><?php echo $pq['ten_chuc_nang']?></option>
+                              <?php endforeach; ?>
                         </select>
                       </div>
                     </div>
@@ -42,9 +42,9 @@
                   </div>
                   <div class="form-group">
                     <div class="input-group input-group-lg">
-                      <input type="search" class="form-control form-control-lg" placeholder="Tìm kiếm theo từ khóa" value="">
+                      <input type="search" class="form-control form-control-lg" placeholder="Tìm kiếm theo từ khóa" name="tukhoa">
                       <div class="input-group-append">
-                        <button type="submit" class="btn btn-lg btn-default">
+                        <button type="submit" type="Tìm kiếm" name="timkiem" class="btn btn-lg btn-default">
                           <i class="fa fa-search"></i>
                         </button>
                       </div>
@@ -61,27 +61,30 @@
                     <th>ID</th>
                     <th>Tên đăng nhập</th>
                     <th>Họ Tên</th>
-                    <th>Chức vụ</th>
+                    <th>Hình Ảnh</th>
+                    <th>Trạng Thái</th>
                     <th>Chọn</th>
                   </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($listtaikhoan as $tk): ?>
                   <tr>
-                    <td>1</td>
-                    <td>hhai03
+                    <td><?php echo $tk['id_tai_khoan']?></td>
+                    <td><?php echo $tk['ten_dang_nhap']?>
                     </td>
-                    <td>Ma Hoàng Hải</td>
-                    <td>Admin</td>
+                    <td><?php echo $tk['ho_ten']?></td>
+                    <td><img style="width: 100px; object-fit: contain;" src="../../upload/<?php echo $tk['img']?>" alt=""></td>
+                    <td><?php echo $tk['trang_thai']?></td>
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-outline-success" href="index.php?act=detailtk" role="button">Xem</a>
-                        <a class="btn btn-outline-secondary" href="index.php?act=updatetk" role="button">Sửa</a>
-                        <a class="btn btn-outline-danger" href="#" role="button">Xóa</a>
+                        <a class="btn btn-outline-success" href="index.php?act=detailtk&id=<?php echo $tk['id_tai_khoan']; ?>" role="button">Xem</a>
+                        <a class="btn btn-outline-secondary" href="index.php?act=suatk&id=<?php echo $tk['id_tai_khoan']; ?>" role="button">Sửa</a>
+                        <a class="btn btn-outline-danger" href="index.php?act=xoatk&id=<?php echo $tk['id_tai_khoan']; ?>" role="button">Xóa</a>
 
                       </div>
                     </td>
                   </tr>
-
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>

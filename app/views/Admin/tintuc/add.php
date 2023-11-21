@@ -24,17 +24,17 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="index.php?act=addtt" method="POST" enctype="multipart/form-data">
+                        <form>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInput">Tiêu đề</label>
-                                    <input class="form-control" type="text" placeholder="Nhập tên danh mục" name="tieu_de">
+                                    <input class="form-control" type="text" placeholder="Nhập tên danh mục">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile">Hình ảnh Tin Tức</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="exampleInputFile" name="img">
+                                            <input type="file" class="custom-file-input" id="exampleInputFile">
                                             <label class="custom-file-label" for="exampleInputFile">Chọn ảnh</label>
                                         </div>
                                         <div class="input-group-append">
@@ -44,21 +44,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInput">Ngày đăng</label>
-                                    <input class="form-control" type="date" name="ngay_dang" placeholder="Nhập ngày đăng">
+                                    <input class="form-control" type="date" placeholder="Nhập ngày đăng">
                                 </div>
                                 <div class="form-group">
                                     <label>Nội dung</label>
-                                    <textarea class="form-control" rows="10" name="noi_dung" placeholder="Nhập nội dung ..."></textarea>
+                                    <textarea class="form-control" rows="10" placeholder="Nhập nội dung ..."></textarea>
                                 </div>
                             </div>
                             <!-- /.card-body -->
-                            <?php
-                            if (isset($thongbao) && $thongbao != "") {
-                                echo '<div class="container mt-3"><div class="alert alert-success" role="alert">' . $thongbao . '</div></div>';
-                            }
-                            ?>
+
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary" name="themmoi">Thêm</button>
+                                <button type="submit" class="btn btn-primary">Thêm</button>
                             </div>
                         </form>
                     </div>

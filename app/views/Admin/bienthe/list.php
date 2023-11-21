@@ -31,28 +31,32 @@
                     <th>Dung Lượng</th>
                     <th>Giá</th>
                     <th>Giá sale</th>
-                    <th>id Sản phẩm</th>
+                    <th>Sản phẩm</th>
                     <th>Chọn</th>
                   </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($listbienthe as $bt):
+                  extract($bt);
+                   ?>
                   <tr>
-                    <td>1</td>
-                    <td><img style="width: 150px; object-fit: contain;" src="../../../public/images/iphone 15 pro tintan.jpeg" alt=""></td>
-                    <td>TiTan Trắng
+                    <td><?php echo $bt['id_bien_the']?></td>
+                    <td><img style="width: 150px; object-fit: contain;" src="../../upload/<?php echo $bt['img']?>" alt=""></td>
+                    <td><?php echo $bt['mau']?>
                     </td>
-                    <td>128GB</td>
-                    <td>27.550.000VND</td>
-                    <td>31.299.000VND</td>
-                    <td>1</td>
+                    <td><?php echo $bt['dung_luong']?></td>
+                    <td>  <?= number_format($gia, 0, ',', '.') ?>VNĐ</td>
+                    <td>  <?= number_format($gia_sale, 0, ',', '.') ?>VNĐ</td>
+                    <td><?php echo $bt['ten_san_pham']?></td>
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-outline-secondary" href="index.php?act=updatebt" role="button">Sửa</a>
-                        <a class="btn btn-outline-danger" href="#" role="button">Xóa</a>
-
+                        <a class="btn btn-outline-success" href="index.php?act=detailbt&id=<?php echo $bt['id_bien_the'];?>" role="button">Xem</a>
+                        <a class="btn btn-outline-secondary" href="index.php?act=suabt&id=<?php echo $bt['id_bien_the'];?>" role="button">Sửa</a>
+                        <a class="btn btn-outline-danger" href="index.php?act=xoabt&id=<?php echo $bt['id_bien_the'];?>" role="button">Xóa</a>
                       </div>
                     </td>
                   </tr>
+                  <?php endforeach; ?>
 
                 </tbody>
               </table>

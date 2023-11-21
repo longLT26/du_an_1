@@ -24,44 +24,40 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="index.php?act=addkm" method="POST">
+            <form>
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInput">Mã khuyến mại</label>
-                  <input class="form-control" type="text" placeholder="Nhập mã khuyến mại" name="ma_khuyen_mai">
+                  <input class="form-control" type="text" placeholder="Nhập mã khuyến mại">
                 </div>
                 <div class="form-group">
                   <label for="exampleInput">Giá trị khuyến mại</label>
-                  <input class="form-control" type="text" placeholder="Nhập giá trị khuyến mại" name="phan_tram_khuyen_mai">
+                  <input class="form-control" type="text" placeholder="Nhập giá trị khuyến mại">
                 </div>
                 <div class="form-group">
                   <label for="exampleInput">Ngày bắt đầu</label>
-                  <input class="form-control" type="date" placeholder="Nhập ngày bắt đầu" name="ngay_bat_dau">
+                  <input class="form-control" type="date" placeholder="Nhập ngày bắt đầu">
                 </div>
                 <div class="form-group">
                   <label for="exampleInput">Ngày kết thúc</label>
-                  <input class="form-control" type="date" placeholder="Nhập ngày kết thúc" name="ngay_ket_thuc">
+                  <input class="form-control" type="date" placeholder="Nhập ngày kết thúc">
                 </div>
                 <div class="form-group">
                   <label>Trạng thái</label>
-                  <select class="select2" name='trangthai' style="width: 100%;">
-                    <option value="ON">On</option>
-                    <option value="OFF">Off</option>
+                  <select class="select2" style="width: 100%;">
+                    <option selected>On</option>
+                    <option>Off</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label>Mô tả</label>
-                  <textarea class="form-control" rows="3" placeholder="Nhập mô tả ..." name="mo_ta"></textarea>
+                  <textarea class="form-control" rows="3" placeholder="Nhập mô tả ..."></textarea>
                 </div>
               </div>
               <!-- /.card-body -->
-              <?php
-if(isset($thongbao) && $thongbao != "") {
-  echo '<div class="container mt-3"><div class="alert alert-success" role="alert">' . $thongbao . '</div></div>';
-}              
-              ?>
+
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary" name="themmoi">Thêm</button>
+                <button type="submit" class="btn btn-primary">Thêm</button>
               </div>
             </form>
           </div>

@@ -25,45 +25,7 @@
   <link rel="stylesheet" href="../../../public/assets/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../../../public/assets/summernote/summernote-bs4.min.css">
-  
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="../../../public/assets/img/favicon.ico">
-
-<!-- CSS 
-========================= -->
-<!--bootstrap min css-->
-<link rel="stylesheet" href="../../../public/assets/css/bootstrap.min.css">
-<!--owl carousel min css-->
-<link rel="stylesheet" href="../../../public/assets/css/owl.carousel.min.css">
-<!--slick min css-->
-<link rel="stylesheet" href="../../../public/assets/css/slick.css">
-<!--magnific popup min css-->
-<link rel="stylesheet" href="../../../public/assets/css/magnific-popup.css">
-<!--font awesome css-->
-<link rel="stylesheet" href="../../../public/assets/css/font.awesome.css">
-<!--ionicons min css-->
-<link rel="stylesheet" href="../../../public/assets/css/ionicons.min.css">
-<!--animate css-->
-<link rel="stylesheet" href="../../../public/assets/css/animate.css">
-<!--jquery ui min css-->
-<link rel="stylesheet" href="../../../public/assets/css/jquery-ui.min.css">
-<!--slinky menu css-->
-<link rel="stylesheet" href="../../../public/assets/css/slinky.menu.css">
-<!-- Plugins CSS -->
-<link rel="stylesheet" href="../../../public/assets/css/plugins.css">
-
-<!-- Main Style CSS -->
-<link rel="stylesheet" href="../../../public/assets/css/style.css">
-
-<!--modernizr min js here-->
-<script src="../../../public/assets/js/vendor/modernizr-3.7.1.min.js"></script>
 </head>
-
-
-
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 

@@ -1,8 +1,3 @@
-<?php
-if (is_array($tt)) {
-    extract($tt);
-  }
-?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -29,18 +24,17 @@ if (is_array($tt)) {
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="index.php?act=updatett" method="POST" enctype="multipart/form-data">
+                        <form>
                             <div class="card-body">
-                            <input type="text" name="id" value="<?php echo $tt['id_tin_tuc'] ?>">
                                 <div class="form-group">
                                     <label for="exampleInput">Tiêu đề</label>
-                                    <input class="form-control" type="text" name="tieu_de" value="<?php echo $tt['tieu_de'] ?>" placeholder="Nhập tên danh mục">
+                                    <input class="form-control" type="text" placeholder="Nhập tên danh mục">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile">Hình ảnh Tin Tức</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" name="img" value="<?php echo $tt['img'] ?>" class="custom-file-input" id="exampleInputFile">
+                                            <input type="file" class="custom-file-input" id="exampleInputFile">
                                             <label class="custom-file-label" for="exampleInputFile">Chọn ảnh</label>
                                         </div>
                                         <div class="input-group-append">
@@ -50,17 +44,17 @@ if (is_array($tt)) {
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInput">Ngày đăng</label>
-                                    <input class="form-control" type="date" name="ngay_dang" value="<?php echo $tt['ngay_dang'] ?>"placeholder="Nhập ngày đăng">
+                                    <input class="form-control" type="date" placeholder="Nhập ngày đăng">
                                 </div>
                                 <div class="form-group">
                                     <label>Nội dung</label>
-                                    <textarea class="form-control" rows="10" name="noi_dung" value="<?php echo $tt['noi_dung'] ?>" placeholder="Nhập nội dung ..."></textarea>
+                                    <textarea class="form-control" rows="10" placeholder="Nhập nội dung ..."></textarea>
                                 </div>
                             </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" name='capnhat' class="btn btn-primary">Sửa</button>
+                                <button type="submit" class="btn btn-primary">Sửa</button>
                             </div>
                         </form>
                     </div>

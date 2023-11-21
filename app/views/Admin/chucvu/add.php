@@ -24,21 +24,25 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form action="index.php?act=addcv" method="POST">
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInput">Tên Chức Vụ</label>
-                  <input class="form-control" type="text" placeholder="Nhập tên Chức Vụ">
+                  <input class="form-control" name="chucnang" type="text" placeholder="Nhập tên Chức Vụ">
                 </div>
                 <div class="form-group">
                   <label>Mô tả</label>
-                  <textarea class="form-control" rows="5" placeholder="Nhập mô tả ..."></textarea>
+                  <textarea class="form-control" name="mota" rows="5" placeholder="Nhập mô tả ..."></textarea>
                 </div>
               </div>
               <!-- /.card-body -->
-
+              <?php
+if (isset($thongbao) && $thongbao != "") {
+    echo '<div class="container-fluid"><div class="alert alert-success" role="alert">' . $thongbao . '</div></div>';
+}
+?>
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Thêm</button>
+                <button type="submit" name="themmoi" class="btn btn-primary">Thêm</button>
               </div>
             </form>
           </div>
